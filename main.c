@@ -43,5 +43,7 @@ int main(int argc, char* argv[]) {
 
     scan(&Token);
     n = binexpr();
+
+    printf("AST Interpreter: %d\n", interpretAST(n));
     exit(0);
 }

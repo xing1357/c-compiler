@@ -6,3 +6,5 @@ struct ASTnode *mkastunary(int op, struct ASTnode *child, int intval);
 
 struct ASTnode *primary(void);
 struct ASTnode *binexpr(void);
+
+int interpretAST(struct ASTnode *n);
