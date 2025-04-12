@@ -3,3 +3,6 @@ scanner: main.c scan.c
 
 clean:
 	rm -f scanner *.o
+
+run:
+	./scanner test/input
