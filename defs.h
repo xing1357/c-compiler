@@ -5,13 +5,13 @@
 
 // Tokens
 enum {
-    T_PLUS, T_MINUS, T_STAR, T_SLASH, T_INTLIT
+    T_EOF, T_PLUS, T_MINUS, T_STAR, T_SLASH, T_INTLIT
 };
 
 // Token Structure definition
 struct token {
     int token;
-    int intvalue;
+    int intval;
 };
 
 // Different AST Node Types

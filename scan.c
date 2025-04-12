@@ -1,5 +1,6 @@
 #include "defs.h"
 #include "data.h" 
+#include "decl.h"
 
 // Lexical scanner
 
@@ -73,6 +74,7 @@ int scan(struct token *t) {
 
     switch(c) {
         case EOF:
+            t->token = T_EOF;
             return 0;
         case '+':
             t->token = T_PLUS;
@@ -89,7 +91,7 @@ int scan(struct token *t) {
         default:
             // If it is an int, then scan the literal value
             if(isdigit(c)) {
-                t->intvalue = scanint(c);
+                t->intval = scanint(c);
                 t->token = T_INTLIT;
                 break;
             }

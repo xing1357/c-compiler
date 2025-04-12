@@ -25,12 +25,13 @@ static void scanfile() {
     while(scan(&T)) {
         printf("Token %s", tokstr[T.token]);
         if(T.token == T_INTLIT)
-            printf(", value %d", T.intvalue);
+            printf(", value %d", T.intval);
         printf("\n");
     }
 }
 
 int main(int argc, char* argv[]) {
+    struct ASTnode *n;
     if(argc != 2)
         usage(argv[0]);
     init();
@@ -40,6 +41,7 @@ int main(int argc, char* argv[]) {
         exit(1);
     }
 
-    scanfile();
+    scan(&Token);
+    n = binexpr();
     exit(0);
 }

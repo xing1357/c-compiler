@@ -1,8 +1,8 @@
 scanner: main.c scan.c
-	cc -o scanner -g main.c scan.c
+	cc -o parser -g main.c scan.c tree.c expr.c
 
 clean:
-	rm -f scanner *.o
+	rm -f parser *.o
 
 run:
-	./scanner test/input
+	./parser test/input
